@@ -38,6 +38,7 @@ event.on("sayMyName",()=> {console.log("your name is xyz");})
 event.emit("sayMyName")
 
 //Example 3:
+
 event.on("checkPage",(statuscode ,msg )=>{
     console.log(`status code is ${statuscode} and page is ${msg}`);
 
