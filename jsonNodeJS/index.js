@@ -10,8 +10,8 @@ const bioData = {
 
 //object to json conversion...
 
-// const jsonData = JSON.stringify(bioData);
-// console.log(jsonData);
+const jsonData = JSON.stringify(bioData);
+console.log(jsonData);
 // // OUTPUT : {"name":"shruti","age":22,"channel":"thapa technical"}
 
 // //console.log(jsonData.channel);
