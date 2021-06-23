@@ -2,6 +2,7 @@ const path = require("path")
 const express = require ("express");
 const app = express();
 //created express app..
+const hbs= require("hbs");
 
 // //findout path of the folder where out html css are stored
 // //--------------------------------------------------------
@@ -15,10 +16,16 @@ const app = express();
 app.set("view engine","hbs");
 //to set the view engine..
 
-const templatePath=path.join(__dirname,"../templates")
+const templatePath=path.join(__dirname,"../templates/views")
 //rename views folder to templates.
-app.set("views",templatePath)
-const staticPath=path.join(__dirname,'../public')
+//app.set("views",templatePath)
+app.set("views","/home/shruti/Desktop/NodeJS/Node.JS/express.js/templates/views")
+
+// const partialPath=path.join(__dirname,"../templates/partials")
+// console.log(partialPath);
+hbs.registerPartial("/home/shruti/Desktop/NodeJS/Node.JS/express.js/templates/partials")
+
+// const staticPath=path.join(__dirname,'../public')
 
 //built-in middleware 
 //app.use(express.static(staticPath))
@@ -36,12 +43,14 @@ app.get ("/",(req,res)=>{
 app.get("/",(req,res)=>{
     res.send("helllo world from the home page")
 })
-
+app.get("/about",(req,res)=>{
+    res.render('about')
+})
 app.get("/about",(req,res)=>{
     res.send("helllo world from the about page")
 })
 
 //listen to the request.
-app.listen(8000,()=>{
-    console.log("listning to the port at 8000");
+app.listen(8008,()=>{
+    console.log("listning to the port at 8008");
 })
