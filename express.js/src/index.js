@@ -43,8 +43,17 @@ app.get ("/",(req,res)=>{
 app.get("/",(req,res)=>{
     res.send("helllo world from the home page")
 })
+// app.get("/about",(req,res)=>{
+//     res.render('about')
+// })
+//for query string
+//URL:http://localhost:8008/about?name=shrutiKathiriya&age=26
 app.get("/about",(req,res)=>{
-    res.render('about')
+    console.log(req.query.name);//OP {} name pas in url as var ?name=shruti
+    res.render('about',{
+        name :req.query.name ,
+        age:req.query.age,
+    })
 })
 // app.get("/about",(req,res)=>{
 //     res.send("helllo world from the about page")
@@ -56,7 +65,6 @@ app.get("/about/*",(req,res)=>{
         errorcomment : "OOPS ! - about as page page not found!!!!"
     })
 })
-
 // UNIVERSAL OPERATOR * EXPRESS WORKS TOP TO BOTTOM IF FROM ABOVE ANY ROOT WILL 
 //NOT MATCHED THEN IT WILL RENDER 404 PAGE
 app.get("*",(req,res)=>{
@@ -64,7 +72,9 @@ app.get("*",(req,res)=>{
         errorcomment : "OOPS ! -page not found!!!!"
     })
 })
+
 //listen to the request.
 app.listen(8008,()=>{
     console.log("listning to the port at 8008");
 })
+
