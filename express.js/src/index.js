@@ -46,10 +46,23 @@ app.get("/",(req,res)=>{
 app.get("/about",(req,res)=>{
     res.render('about')
 })
-app.get("/about",(req,res)=>{
-    res.send("helllo world from the about page")
-})
+// app.get("/about",(req,res)=>{
+//     res.send("helllo world from the about page")
+// })
+//if we find any error after aboutus page...
 
+app.get("/about/*",(req,res)=>{
+    res.render('404',{
+        errorcomment : "OOPS ! - about as page page not found!!!!"
+    })
+})
+// UNIVERSAL OPERATOR * EXPRESS WORKS TOP TO BOTTOM IF FROM ABOVE ANY ROOT WILL 
+//NOT MATCHED THEN IT WILL RENDER 404 PAGE
+app.get("*",(req,res)=>{
+    res.render('404',{
+        errorcomment : "OOPS ! -page not found!!!!"
+    })
+})
 //listen to the request.
 app.listen(8008,()=>{
     console.log("listning to the port at 8008");
