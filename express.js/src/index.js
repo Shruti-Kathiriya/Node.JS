@@ -56,6 +56,7 @@ app.get("/about/*",(req,res)=>{
         errorcomment : "OOPS ! - about as page page not found!!!!"
     })
 })
+
 // UNIVERSAL OPERATOR * EXPRESS WORKS TOP TO BOTTOM IF FROM ABOVE ANY ROOT WILL 
 //NOT MATCHED THEN IT WILL RENDER 404 PAGE
 app.get("*",(req,res)=>{
