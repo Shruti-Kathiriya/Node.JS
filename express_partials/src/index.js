@@ -2,7 +2,7 @@ const path = require("path")
 const express = require ("express");
 const app = express();
 const hbs= require('hbs');
-const { template } = require("handlebars");
+
 app.set('view engine', '.hbs');
 const templatePath=path.join(__dirname,"../templates/views")
 console.log(templatePath);

@@ -13,17 +13,17 @@ const hbs= require("hbs");
 // //OP /home/shruti/Desktop/NodeJS/Node.JS/express.js
 // console.log(path.join(__dirname,'../public'));
 // //OP /home/shruti/Desktop/NodeJS/Node.JS/express.js/public
-app.set("view engine","hbs");
+app.set("view engine",".hbs");
 //to set the view engine..
 
 const templatePath=path.join(__dirname,"../templates/views")
 //rename views folder to templates.
 //app.set("views",templatePath)
-app.set("views","/home/shruti/Desktop/NodeJS/Node.JS/express.js/templates/views")
+app.set("views",templatePath)
 
-// const partialPath=path.join(__dirname,"../templates/partials")
+const partialPath=path.join(__dirname,"../templates/partials")
 // console.log(partialPath);
-hbs.registerPartial("/home/shruti/Desktop/NodeJS/Node.JS/express.js/templates/partials")
+hbs.registerPartials(partialPath)
 
 // const staticPath=path.join(__dirname,'../public')
 
