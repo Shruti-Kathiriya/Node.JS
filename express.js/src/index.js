@@ -15,6 +15,9 @@ const app = express();
 app.set("view engine","hbs");
 //to set the view engine..
 
+const templatePath=path.join(__dirname,"../templates")
+//rename views folder to templates.
+app.set("views",templatePath)
 const staticPath=path.join(__dirname,'../public')
 
 //built-in middleware 
