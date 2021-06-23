@@ -2,11 +2,12 @@ const path = require("path")
 const express = require ("express");
 const app = express();
 const hbs= require('hbs');
+const { template } = require("handlebars");
 app.set('view engine', '.hbs');
-// const templatePath=path.join(__dirname,"../templates/views")
-// console.log(templatePath);
-// app.set("views",templatePath);
-const partialPath=path.join(__dirname,"../partials")
+const templatePath=path.join(__dirname,"../templates/views")
+console.log(templatePath);
+app.set("views",templatePath);
+const partialPath=path.join(__dirname,"../templates/partials")
 console.log(partialPath);
 hbs.registerPartials(partialPath)
 //hbs.registerPartial()
