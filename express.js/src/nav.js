@@ -61,6 +61,6 @@ app.get("/temprature",(req,res)=>{
         name:"shruti"
     }])
 })
-app.listen(8004,()=>{
+app.listen(8008,()=>{
     console.log("listening to the potn no 8004");
 })
